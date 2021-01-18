@@ -1,17 +1,17 @@
 <?php
 
-namespace UniSharp\LaravelFilemanager;
+namespace LongNguyen\LaravelFilemanager;
 
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
-use UniSharp\LaravelFilemanager\Middlewares\CreateDefaultFolder;
-use UniSharp\LaravelFilemanager\Middlewares\MultiUser;
+use LongNguyen\LaravelFilemanager\Middlewares\CreateDefaultFolder;
+use LongNguyen\LaravelFilemanager\Middlewares\MultiUser;
 
 class Lfm
 {
-    const PACKAGE_NAME = 'laravel-filemanager';
+    const PACKAGE_NAME = 'filemanager';
     const DS = '/';
 
     protected $config;
@@ -243,8 +243,8 @@ class Lfm
     public static function routes()
     {
         $middleware = [ CreateDefaultFolder::class, MultiUser::class ];
-        $as = 'unisharp.lfm.';
-        $namespace = '\\UniSharp\\LaravelFilemanager\\Controllers\\';
+        $as = 'longnguyen.lfm.';
+        $namespace = '\\LongNguyen\\LaravelFilemanager\\Controllers\\';
 
         Route::group(compact('middleware', 'as', 'namespace'), function () {
 

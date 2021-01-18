@@ -1,12 +1,12 @@
 <?php
 
-namespace UniSharp\LaravelFilemanager;
+namespace LongNguyen\LaravelFilemanager;
 
 use Illuminate\Container\Container;
 use Intervention\Image\Facades\Image;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use UniSharp\LaravelFilemanager\Events\ImageIsUploading;
-use UniSharp\LaravelFilemanager\Events\ImageWasUploaded;
+use LongNguyen\LaravelFilemanager\Events\ImageIsUploading;
+use LongNguyen\LaravelFilemanager\Events\ImageWasUploaded;
 
 class LfmPath
 {

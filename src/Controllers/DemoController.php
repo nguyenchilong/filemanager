@@ -1,6 +1,6 @@
 <?php
 
-namespace UniSharp\LaravelFilemanager\Controllers;
+namespace LongNguyen\LaravelFilemanager\Controllers;
 
 class DemoController extends LfmController
 {

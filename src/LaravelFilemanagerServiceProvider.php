@@ -1,6 +1,6 @@
 <?php
 
-namespace UniSharp\LaravelFilemanager;
+namespace LongNguyen\LaravelFilemanager;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
@@ -17,20 +17,20 @@ class LaravelFilemanagerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadTranslationsFrom(__DIR__.'/lang', 'laravel-filemanager');
+        $this->loadTranslationsFrom(__DIR__.'/lang', 'filemanager');
 
-        $this->loadViewsFrom(__DIR__.'/views', 'laravel-filemanager');
+        $this->loadViewsFrom(__DIR__.'/views', 'filemanager');
 
         $this->publishes([
             __DIR__ . '/config/lfm.php' => base_path('config/lfm.php'),
         ], 'lfm_config');
 
         $this->publishes([
-            __DIR__.'/../public' => public_path('vendor/laravel-filemanager'),
+            __DIR__.'/../public' => public_path('vendor/filemanager'),
         ], 'lfm_public');
 
         $this->publishes([
-            __DIR__.'/views'  => base_path('resources/views/vendor/laravel-filemanager'),
+            __DIR__.'/views'  => base_path('resources/views/vendor/filemanager'),
         ], 'lfm_view');
 
         $this->publishes([
@@ -39,7 +39,7 @@ class LaravelFilemanagerServiceProvider extends ServiceProvider
 
         if (config('lfm.use_package_routes')) {
             Route::group(['prefix' => 'filemanager', 'middleware' => ['web', 'auth']], function () {
-                \UniSharp\LaravelFilemanager\Lfm::routes();
+                \LongNguyen\LaravelFilemanager\Lfm::routes();
             });
         }
     }
@@ -53,7 +53,7 @@ class LaravelFilemanagerServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(__DIR__ . '/config/lfm.php', 'lfm-config');
 
-        $this->app->singleton('laravel-filemanager', function () {
+        $this->app->singleton('filemanager', function () {
             return true;
         });
     }

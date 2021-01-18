@@ -1,6 +1,6 @@
 <?php
 
-namespace UniSharp\LaravelFilemanager\Events;
+namespace LongNguyen\LaravelFilemanager\Events;
 
 class ImageIsDeleting
 {
