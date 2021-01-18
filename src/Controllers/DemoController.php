@@ -1,11 +1,11 @@
 <?php
 
-namespace LongNguyen\LaravelFilemanager\Controllers;
+namespace Lnchub\Filemanager\Controllers;
 
 class DemoController extends LfmController
 {
     public function index()
     {
-        return view('laravel-filemanager::demo');
+        return view('filemanager::demo');
     }
 }

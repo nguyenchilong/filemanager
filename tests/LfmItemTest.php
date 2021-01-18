@@ -4,9 +4,9 @@ namespace Tests;
 
 use Mockery as m;
 use PHPUnit\Framework\TestCase;
-use UniSharp\LaravelFilemanager\Lfm;
-use UniSharp\LaravelFilemanager\LfmItem;
-use UniSharp\LaravelFilemanager\LfmPath;
+use Lnchub\Filemanager\Lfm;
+use Lnchub\Filemanager\LfmItem;
+use Lnchub\Filemanager\LfmPath;
 
 class LfmItemTest extends TestCase
 {
@@ -171,18 +171,6 @@ class LfmItemTest extends TestCase
         $item = new LfmItem($this->lfm_path, $this->lfm);
 
         $this->assertEquals('baz', $item->icon());
-
-        // $path1 = m::mock(LfmPath::class);
-        // $path1->shouldReceive('path')->with('absolute')->andReturn('foo/bar');
-        // $path1->shouldReceive('isDirectory')->andReturn(false);
-        // $path1->shouldReceive('mimeType')->andReturn('image/png');
-
-        // $path3 = m::mock(LfmPath::class);
-        // $path3->shouldReceive('path')->with('absolute')->andReturn('foo/biz');
-        // $path3->shouldReceive('isDirectory')->andReturn(true);
-
-        // $this->assertEquals('fa-image',    (new LfmItem($path1))->icon());
-        // $this->assertEquals('fa-folder-o', (new LfmItem($path3))->icon());
     }
 
     public function testHasThumb()

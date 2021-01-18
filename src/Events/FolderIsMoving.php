@@ -1,6 +1,6 @@
 <?php
 
-namespace LongNguyen\LaravelFilemanager\Events;
+namespace Lnchub\Filemanager\Events;
 
 class FolderIsMoving
 {

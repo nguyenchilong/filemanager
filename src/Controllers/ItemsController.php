@@ -1,12 +1,12 @@
 <?php
 
-namespace LongNguyen\LaravelFilemanager\Controllers;
+namespace Lnchub\Filemanager\Controllers;
 
 use Illuminate\Support\Facades\Storage;
-use LongNguyen\LaravelFilemanager\Events\FileIsMoving;
-use LongNguyen\LaravelFilemanager\Events\FileWasMoving;
-use LongNguyen\LaravelFilemanager\Events\FolderIsMoving;
-use LongNguyen\LaravelFilemanager\Events\FolderWasMoving;
+use Lnchub\Filemanager\Events\FileIsMoving;
+use Lnchub\Filemanager\Events\FileWasMoving;
+use Lnchub\Filemanager\Events\FolderIsMoving;
+use Lnchub\Filemanager\Events\FolderWasMoving;
 
 class ItemsController extends LfmController
 {
@@ -42,13 +42,13 @@ class ItemsController extends LfmController
         $folder_types = array_filter(['user', 'share'], function ($type) {
             return $this->helper->allowFolderType($type);
         });
-        return view('laravel-filemanager::move')
+        return view('filemanager::move')
             ->with([
                 'root_folders' => array_map(function ($type) use ($folder_types) {
                     $path = $this->lfm->dir($this->helper->getRootFolder($type));
 
                     return (object) [
-                        'name' => trans('laravel-filemanager::lfm.title-' . $type),
+                        'name' => trans('filemanager::lfm.title-' . $type),
                         'url' => $path->path('working_dir'),
                         'children' => $path->folders(),
                         'has_next' => ! ($type == end($folder_types)),

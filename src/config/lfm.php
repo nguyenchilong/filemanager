@@ -1,13 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Documentation for this config :
-|--------------------------------------------------------------------------
-| online  => http://unisharp.github.io/laravel-filemanager/config
-| offline => vendor/unisharp/laravel-filemanager/docs/config.md
- */
-
 return [
     /*
     |--------------------------------------------------------------------------
@@ -33,7 +25,7 @@ return [
     // Then you can rewrite userField function in App\Handler\ConfigHandler class
     // And set 'user_field' to App\Handler\ConfigHandler::class
     // Ex: The private folder of user will be named as the user id.
-    'private_folder_name'      => LongNguyen\LaravelFilemanager\Handlers\ConfigHandler::class,
+    'private_folder_name'      => Lnchub\Filemanager\Handlers\ConfigHandler::class,
 
     'allow_shared_folder'      => true,
 
@@ -52,7 +44,6 @@ return [
             'max_size'     => 50000, // size in KB
             'valid_mime'   => [
                 'image/jpeg',
-                'image/pjpeg',
                 'image/png',
                 'image/gif',
                 'image/svg+xml',

@@ -1,13 +1,13 @@
 <?php
 
-namespace LongNguyen\LaravelFilemanager;
+namespace Lnchub\Filemanager;
 
 use Illuminate\Contracts\Config\Repository as Config;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
-use LongNguyen\LaravelFilemanager\Middlewares\CreateDefaultFolder;
-use LongNguyen\LaravelFilemanager\Middlewares\MultiUser;
+use Lnchub\Filemanager\Middlewares\CreateDefaultFolder;
+use Lnchub\Filemanager\Middlewares\MultiUser;
 
 class Lfm
 {
@@ -243,8 +243,8 @@ class Lfm
     public static function routes()
     {
         $middleware = [ CreateDefaultFolder::class, MultiUser::class ];
-        $as = 'longnguyen.lfm.';
-        $namespace = '\\LongNguyen\\LaravelFilemanager\\Controllers\\';
+        $as = 'lnchub.lfm.';
+        $namespace = '\\Lnchub\\Filemanager\\Controllers\\';
 
         Route::group(compact('middleware', 'as', 'namespace'), function () {
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace LongNguyen\LaravelFilemanager\Controllers;
+namespace Lnchub\Filemanager\Controllers;
 
 use Intervention\Image\Facades\Image;
-use LongNguyen\LaravelFilemanager\Events\ImageIsResizing;
-use LongNguyen\LaravelFilemanager\Events\ImageWasResized;
+use Lnchub\Filemanager\Events\ImageIsResizing;
+use Lnchub\Filemanager\Events\ImageWasResized;
 
 class ResizeController extends LfmController
 {
@@ -42,7 +42,7 @@ class ResizeController extends LfmController
             $scaled = true;
         }
 
-        return view('laravel-filemanager::resize')
+        return view('filemanager::resize')
             ->with('img', $this->lfm->pretty($image))
             ->with('height', number_format($height, 0))
             ->with('width', $width)

@@ -1,10 +1,10 @@
 <?php
 
-namespace LongNguyen\LaravelFilemanager\Controllers;
+namespace Lnchub\Filemanager\Controllers;
 
 use Illuminate\Support\Facades\Storage;
-use LongNguyen\LaravelFilemanager\Events\ImageIsDeleting;
-use LongNguyen\LaravelFilemanager\Events\ImageWasDeleted;
+use Lnchub\Filemanager\Events\ImageIsDeleting;
+use Lnchub\Filemanager\Events\ImageWasDeleted;
 
 class DeleteController extends LfmController
 {

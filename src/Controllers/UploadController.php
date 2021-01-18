@@ -1,11 +1,11 @@
 <?php
 
-namespace LongNguyen\LaravelFilemanager\Controllers;
+namespace Lnchub\Filemanager\Controllers;
 
 use Illuminate\Support\Facades\Log;
-use LongNguyen\LaravelFilemanager\Events\ImageIsUploading;
-use LongNguyen\LaravelFilemanager\Events\ImageWasUploaded;
-use LongNguyen\LaravelFilemanager\Lfm;
+use Lnchub\Filemanager\Events\ImageIsUploading;
+use Lnchub\Filemanager\Events\ImageWasUploaded;
+use Lnchub\Filemanager\Lfm;
 
 class UploadController extends LfmController
 {

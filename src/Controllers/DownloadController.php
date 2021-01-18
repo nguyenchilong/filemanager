@@ -1,6 +1,6 @@
 <?php
 
-namespace LongNguyen\LaravelFilemanager\Controllers;
+namespace Lnchub\Filemanager\Controllers;
 
 use Illuminate\Support\Facades\Storage;
 

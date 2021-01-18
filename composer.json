@@ -1,5 +1,5 @@
 {
-  "name": "unisharp/laravel-filemanager",
+  "name": "lnchub/filemanager",
   "description": "A file upload/editor intended for use with Laravel 5 to 6 and CKEditor / TinyMCE",
   "license": "MIT",
   "keywords": [
@@ -14,12 +14,12 @@
   ],
   "authors": [
     {
-      "name": "Trevor Sawler",
-      "email": "trevor.sawler@gmail.com"
+      "name": "Long Nguyen",
+      "email": "longnc@lnchub.com"
     },
     {
-      "name": "UniSharp Ltd.",
-      "email": "opensource@unisharp.com"
+      "name": "LNCHUB Co., Ltd",
+      "email": "longnc@lnchub.com"
     }
   ],
   "require": {
@@ -44,7 +44,7 @@
   },
   "autoload": {
     "psr-4": {
-      "UniSharp\\LaravelFilemanager\\": "src/"
+      "Lnchub\\Filemanager\\": "src/"
     }
   },
   "autoload-dev": {
@@ -55,7 +55,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "UniSharp\\LaravelFilemanager\\LaravelFilemanagerServiceProvider"
+        "Lnchub\\Filemanager\\FilemanagerServiceProvider"
       ],
       "aliases": {
       }

@@ -1,10 +1,10 @@
 <?php
 
-namespace LongNguyen\LaravelFilemanager\Controllers;
+namespace Lnchub\Filemanager\Controllers;
 
 use Intervention\Image\Facades\Image;
-use LongNguyen\LaravelFilemanager\Events\ImageIsCropping;
-use LongNguyen\LaravelFilemanager\Events\ImageWasCropped;
+use Lnchub\Filemanager\Events\ImageIsCropping;
+use Lnchub\Filemanager\Events\ImageWasCropped;
 
 class CropController extends LfmController
 {
@@ -15,7 +15,7 @@ class CropController extends LfmController
      */
     public function getCrop()
     {
-        return view('laravel-filemanager::crop')
+        return view('filemanager::crop')
             ->with([
                 'working_dir' => request('working_dir'),
                 'img' => $this->lfm->pretty(request('img'))

@@ -1,12 +1,12 @@
 <?php
 
-namespace LongNguyen\LaravelFilemanager;
+namespace Lnchub\Filemanager;
 
 use Illuminate\Container\Container;
 use Intervention\Image\Facades\Image;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use LongNguyen\LaravelFilemanager\Events\ImageIsUploading;
-use LongNguyen\LaravelFilemanager\Events\ImageWasUploaded;
+use Lnchub\Filemanager\Events\ImageIsUploading;
+use Lnchub\Filemanager\Events\ImageWasUploaded;
 
 class LfmPath
 {
@@ -36,21 +36,18 @@ class LfmPath
     public function dir($working_dir)
     {
         $this->working_dir = $working_dir;
-
         return $this;
     }
 
     public function thumb($is_thumb = true)
     {
         $this->is_thumb = $is_thumb;
-
         return $this;
     }
 
     public function setName($item_name)
     {
         $this->item_name = $item_name;
-
         return $this;
     }
 
@@ -62,18 +59,12 @@ class LfmPath
     public function path($type = 'storage')
     {
         if ($type == 'working_dir') {
-            // working directory: /{user_slug}
             return $this->translateToLfmPath($this->normalizeWorkingDir());
         } elseif ($type == 'url') {
-            // storage: files/{user_slug}
             return $this->helper->getCategoryName() . $this->path('working_dir');
         } elseif ($type == 'storage') {
-            // storage: files/{user_slug}
-            // storage on windows: files\{user_slug}
             return str_replace(Lfm::DS, $this->helper->ds(), $this->path('url'));
         } else {
-            // absolute: /var/www/html/project/storage/app/files/{user_slug}
-            // absolute on windows: C:\project\storage\app\files\{user_slug}
             return $this->storage->rootPath() . $this->path('storage');
         }
     }
@@ -218,7 +209,6 @@ class LfmPath
         $this->uploadValidator($file);
         $new_file_name = $this->getNewName($file);
         $new_file_path = $this->setName($new_file_name)->path('absolute');
-
         event(new ImageIsUploading($new_file_path));
         try {
             $new_file_name = $this->saveFile($file, $new_file_name);
@@ -243,27 +233,20 @@ class LfmPath
         } elseif ($file->getError() != UPLOAD_ERR_OK) {
             throw new \Exception('File failed to upload. Error code: ' . $file->getError());
         }
-
         $new_file_name = $this->getNewName($file);
-
         if ($this->setName($new_file_name)->exists() && !config('lfm.over_write_on_duplicate')) {
             return $this->error('file-exist');
         }
-
         $mimetype = $file->getMimeType();
-
         $excutable = ['text/x-php'];
-
         if (in_array($mimetype, $excutable)) {
             throw new \Exception('Invalid file detected');
         }
-
         if (config('lfm.should_validate_mime', false)) {
             if (false === in_array($mimetype, $this->helper->availableMimeTypes())) {
                 return $this->error('mime') . $mimetype;
             }
         }
-
         if (config('lfm.should_validate_size', false)) {
             // size to kb unit is needed
             $file_size = $file->getSize() / 1000;
@@ -271,7 +254,6 @@ class LfmPath
                 return $this->error('size') . $file_size;
             }
         }
-
         return 'pass';
     }
 
@@ -316,28 +298,22 @@ class LfmPath
     private function saveFile($file, $new_file_name)
     {
         $this->setName($new_file_name)->storage->save($file);
-
         $this->makeThumbnail($new_file_name);
-
         return $new_file_name;
     }
 
     public function makeThumbnail($file_name)
     {
         $original_image = $this->pretty($file_name);
-
         if (!$original_image->shouldCreateThumb()) {
             return;
         }
-
         // create folder for thumbnails
         $this->setName(null)->thumb(true)->createFolder();
-
         // generate cropped image content
         $this->setName($file_name)->thumb(true);
         $image = Image::make($original_image->get())
             ->fit(config('lfm.thumb_img_width', 200), config('lfm.thumb_img_height', 200));
-
         $this->storage->put($image->stream()->detach(), 'public');
     }
 }

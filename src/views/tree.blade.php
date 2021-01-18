@@ -1,9 +1,9 @@
 <div class="m-3 d-block d-lg-none">
   <h1 style="font-size: 1.5rem;">Laravel File Manager</h1>
-  <small class="d-block">Ver 2.0</small>
+  <small class="d-block">Ver 2.1</small>
   <div class="row mt-3">
     <div class="col-4">
-      <img src="{{ asset('vendor/laravel-filemanager/img/152px color.png') }}" class="w-100">
+      <img src="{{ asset('vendor/filemanager/img/152px color.png') }}" class="w-100">
     </div>
 
     <div class="col-8">

@@ -1,9 +1,9 @@
 <?php
 
-namespace LongNguyen\LaravelFilemanager\Controllers;
+namespace Lnchub\Filemanager\Controllers;
 
-use LongNguyen\LaravelFilemanager\Lfm;
-use LongNguyen\LaravelFilemanager\LfmPath;
+use Lnchub\Filemanager\Lfm;
+use Lnchub\Filemanager\LfmPath;
 
 class LfmController extends Controller
 {
@@ -35,7 +35,7 @@ class LfmController extends Controller
      */
     public function show()
     {
-        return view('laravel-filemanager::index')
+        return view('filemanager::index')
             ->withHelper($this->helper);
     }
 
@@ -49,7 +49,7 @@ class LfmController extends Controller
         $arr_errors = [];
 
         if (! extension_loaded('gd') && ! extension_loaded('imagick')) {
-            array_push($arr_errors, trans('laravel-filemanager::lfm.message-extension_not_found'));
+            array_push($arr_errors, trans('filemanager::lfm.message-extension_not_found'));
         }
 
         if (! extension_loaded('exif')) {

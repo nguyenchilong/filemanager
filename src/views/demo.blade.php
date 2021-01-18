@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Laravel Filemanager</title>
-  <link rel="shortcut icon" type="image/png" href="{{ asset('vendor/laravel-filemanager/img/72px color.png') }}">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <link rel="shortcut icon" type="image/png" href="{{ asset('vendor/filemanager/img/72px color.png') }}">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -57,9 +57,9 @@
     </div>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
   <script>
    var route_prefix = "/filemanager";
   </script>
@@ -114,11 +114,10 @@
   </script>
 
   <script>
-    {!! \File::get(base_path('vendor/LongNguyen/laravel-filemanager/public/js/stand-alone-button.js')) !!}
+    {!! \File::get(base_path('vendor/lnchub/filemanager/public/js/stand-alone-button.js')) !!}
   </script>
   <script>
     $('#lfm').filemanager('image', {prefix: route_prefix});
-    // $('#lfm').filemanager('file', {prefix: route_prefix});
   </script>
 
   <script>
@@ -160,8 +159,8 @@
     lfm('lfm2', 'file', {prefix: route_prefix});
   </script>
 
-  <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" rel="stylesheet">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
   <style>
     .popover {
       top: auto;
