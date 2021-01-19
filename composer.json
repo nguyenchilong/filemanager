@@ -2,6 +2,7 @@
   "name": "lnchub/filemanager",
   "description": "A file upload/editor intended for use with Laravel 5 to 6 and CKEditor / TinyMCE",
   "license": "MIT",
+  "homepage": "https://lnchub.com",
   "keywords": [
     "filemanager",
     "laravel",
@@ -18,7 +19,7 @@
       "email": "longnc@lnchub.com"
     },
     {
-      "name": "LNCHUB Co., Ltd",
+      "name": "lnchub Co., Ltd",
       "email": "longnc@lnchub.com"
     }
   ],
