@@ -2,7 +2,9 @@
 
 namespace App\Handlers;
 
-class LfmConfigHandler extends \Lnchub\Filemanager\Handlers\ConfigHandler
+use Lnchub\Filemanager\Handlers\ConfigHandler;
+
+class LfmConfigHandler extends ConfigHandler
 {
     public function userField()
     {
